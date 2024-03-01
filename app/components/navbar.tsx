@@ -34,7 +34,7 @@ const Navbar = () => {
     <nav className="h-20 w-full">
       <div
         ref={targetRef}
-        className="fixed left-1/2 transform -translate-x-1/2 my-2 w-11/12 bg-gray-800 px-4 py-2  rounded-lg mx-auto flex flex-col sm:flex-row sm:items-start sm:justify-between"
+        className="z-50 fixed left-1/2 transform -translate-x-1/2 my-2 w-11/12 bg-gray-800 px-4 py-2  rounded-lg mx-auto flex flex-col sm:flex-row sm:items-start sm:justify-between"
       >
         <div className="flex items-center justify-between w-full sm:w-auto">
           <span className="text-white align-middle text-xl pt-3 font-bold">
@@ -73,9 +73,9 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+          <Link href='/login' className="btn_secondary">
             Login
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

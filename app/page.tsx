@@ -1,5 +1,5 @@
 "use client"
-import MainPage from "./components/mainPage";
+import MainPage from "./components/mainpage/mainPage";
 
 export default function Home() {
   // const number = Math.floor(Math.random() *10) + 1

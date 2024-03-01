@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import contactPicture from "@/public/assets/contact-pic/contact-pic.png";
+import contactPicture from "@/public/assets/images/contact-pic/contact-pic.png";
+import ImgHoverZoom from "../components/imgHoverZoom/imgHoverZoom";
 export default function Contact() {
   return (
     <div>
@@ -14,12 +15,9 @@ export default function Contact() {
           Email
         </Link>
       </div>
-      <Image
-        src={contactPicture}
-        width={200}
-        alt="Contact us picture"
-        className="text-center mx-auto w-4/5 md:w-3/5"
-      />
+      <div className="mb-8 text-center mx-auto w-4/5 md:w-3/5">
+        <ImgHoverZoom src={contactPicture} alt="Contact us picture" />
+      </div>
     </div>
   );
 }
