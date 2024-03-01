@@ -50,7 +50,6 @@ export default function Faq() {
         </h2>
         {q.map( item => {
             console.log(openId === item.id);
-            
           return (
             <div key={item.id} className=" border-b border-gray-300 p-2 my-4">
               <button
@@ -60,7 +59,7 @@ export default function Faq() {
                 <span className="text-lg font-medium">
                   {item.id}. {item.q}
                 </span>
-                <span className={` ${openId === item.id ? 'rotate-180' : 'rotate-0' } text-gray-500 rotate-180 text-xl transition-transform transform hover:scale-110`}>
+                <span className={` ${openId === item.id ? 'rotate-180' : 'rotate-0' } text-gray-500 text-xl transition-transform transform hover:scale-110`}>
                   <FaChevronDown/>
                 </span>
               </button>
