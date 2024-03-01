@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="w-full h-full md:order-1 hidden sm:block ">
         <ImgHoverZoom src={heroImage} alt="Astronaut in the air"/>
         </div>
-        <div>
+        <div className="my-8">
           <h1 className="text-gray-800 text-3xl lg:text-6xl xl:text-5xl font-bold lg:tracking-tight">
             Empowering Creators to Analyze their Videos and channels
           </h1>

@@ -72,10 +72,10 @@ export default function Faq() {
           );
         })}
         <div className="mt-10 text-center text-xl">
-          <h3 className="">Have more questions?</h3>
+          <h3 className="my-4">Have more questions?</h3>
           <Link
             href="/contact"
-            className="text-blue-600 underline hover:text-gray-400"
+            className="btn_secondary"
           >
             Contact Us
           </Link>
