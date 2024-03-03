@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import contactPicture from "@/public/assets/images/contact-pic/contact-pic.png";
 import ImgHoverZoom from "../components/imgHoverZoom/imgHoverZoom";
+
 export default function Contact() {
   return (
     <div>

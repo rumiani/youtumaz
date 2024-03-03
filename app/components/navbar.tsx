@@ -8,7 +8,6 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "FAQ", href: "/faq" },
-
 ];
 
 const Navbar = () => {
@@ -73,9 +72,11 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <Link href='/login' className="btn_secondary">
-            Login
-          </Link>
+          {!router.endsWith("login") && (
+            <Link href="/login" className="btn_secondary">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </nav>

@@ -47,8 +47,8 @@ const features = [
 ];
 export default function Features() {
   return (
-    <div>
-      <div className="mt-16 md:mt-0">
+    <div className="mt-16">
+      <div>
         <h2 className="text-4xl lg:text-5xl font-bold lg:tracking-tight">
           Everything you need to Analyze your channel
         </h2>
@@ -59,8 +59,8 @@ export default function Features() {
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
         {features.map((item, index) => (
-          <div key={index} className="flex gap-4 items-start">
-            <div className="mt-1 rounded-full  p-2 w-10 h-10 shrink-0">
+          <div key={index} className="flex gap-3 items-start bg-white p-2 rounded-lg shadow-md">
+            <div className="mt-1 rounded-full w-10 h-10">
               {item.icon}
             </div>
             <div>
