@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`max-w-screen-2xl min-h-screen ${inter.className}`}>
+      <SpeedInsights/>
         <NextAuthProvider>
           <Navbar />
           <main className=" w-full px-2 sm:px-10 md:px-12 rounded-lg">
