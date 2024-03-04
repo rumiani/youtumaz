@@ -1,3 +1,4 @@
+"use client"
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -11,6 +12,7 @@ const handler = NextAuth({
           return session;
         },
         async signIn({ profile }) {
+          alert(profile)
           console.log(profile);
           try {
             await connectDB();
@@ -30,6 +32,7 @@ const handler = NextAuth({
       },
     }),
   ],
-  secret: process.env.NEXT_PUBLIC_SECRET
+  secret: process.env.NEXT_PUBLIC_SECRET,
+  url: process.env.NEXT_PUBLIC_URL
 });
 export { handler as GET, handler as POST };
