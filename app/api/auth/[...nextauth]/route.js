@@ -1,4 +1,3 @@
-"use client"
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -12,7 +11,6 @@ const handler = NextAuth({
           return session;
         },
         async signIn({ profile }) {
-          alert(profile)
           console.log(profile);
           try {
             await connectDB();
