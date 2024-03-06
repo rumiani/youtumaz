@@ -11,12 +11,10 @@ const handler = NextAuth({
           return session;
         },
         async signIn({ profile }) {
-          console.log(profile);
           try {
             await connectDB();
             return true;
           } catch (error) {
-            console.log(error);
             return false;
           }
         },

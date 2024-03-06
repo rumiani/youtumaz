@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -14,6 +15,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = usePathname();
   const targetRef = useRef<HTMLDivElement>(null);
+  const { data: session } = useSession();
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -21,6 +24,13 @@ const Navbar = () => {
         !targetRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false);
+      }
+      if (session) {
+        navLinks.push({ name: "Dashboard", href: "/dashboard" });
+        console.log("signed In");
+      } else {
+        navLinks.pop();
+        console.log("signed Out");
       }
     };
     document.addEventListener("click", handleClickOutside);
