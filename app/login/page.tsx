@@ -31,7 +31,7 @@ export default function Login() {
         <button
           onClick={() => signIn("google")}
           title="Log in with Google"
-          className="cursor-pointer text-gray-600 hover:text-gray-800 transition-all duration-300 hover:scale-105 shadow-lg shadow-gray-300 rounded-lg flex flex-row w-60 h-10 mx-auto text-center"
+          className="my-8 cursor-pointer text-gray-600 hover:text-gray-800 transition-all duration-300 hover:scale-105 shadow-lg shadow-gray-300 rounded-lg flex flex-row w-60 h-10 mx-auto text-center"
         >
           <Image
             alt="Google logo"
