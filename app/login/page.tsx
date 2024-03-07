@@ -31,15 +31,15 @@ export default function Login() {
         <button
           onClick={() => signIn("google")}
           title="Log in with Google"
-          className="my-16 cursor-pointer text-gray-600 hover:text-gray-800 transition-all duration-300 hover:scale-105 shadow-lg shadow-gray-300 rounded-lg flex flex-row w-60 h-10 mx-auto text-center"
+          className="cursor-pointer text-gray-600 hover:text-gray-800 transition-all duration-300 hover:scale-105 shadow-lg shadow-gray-300 rounded-lg flex flex-row w-60 h-10 mx-auto text-center"
         >
           <Image
             alt="Google logo"
             src={googleLogo}
             width={32}
-            className="mx-2"
+            className="mx-2 h-9"
           />
-          <h3 className="w-52  flex self-center justify-center font-bold ">
+          <h3 className="w-52 h-full pt-2 rounded-e-lg text-white bg-blue-400 hover:bg-blue-500 text-center font-semibold">
             Sigin in with Google
           </h3>
         </button>
