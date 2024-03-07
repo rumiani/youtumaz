@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 
-const navLinks = [
+let navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
@@ -29,7 +29,7 @@ const Navbar = () => {
         navLinks.push({ name: "Dashboard", href: "/dashboard" });
         console.log("signed In");
       } else {
-        navLinks.pop();
+        navLinks = navLinks.filter(link => link.href !== "/dashboard");
         console.log("signed Out");
       }
     };
@@ -37,7 +37,7 @@ const Navbar = () => {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [session]);
 
   return (
     <nav className="h-20 w-full">
