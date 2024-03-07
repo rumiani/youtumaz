@@ -11,12 +11,10 @@ const handler = NextAuth({
           return session;
         },
         async signIn({ profile }) {
-          console.log(profile);
           try {
             await connectDB();
             return true;
           } catch (error) {
-            console.log(error);
             return false;
           }
         },
@@ -30,5 +28,7 @@ const handler = NextAuth({
       },
     }),
   ],
+  secret: process.env.NEXT_PUBLIC_SECRET,
+  url: process.env.NEXT_PUBLIC_URL
 });
 export { handler as GET, handler as POST };

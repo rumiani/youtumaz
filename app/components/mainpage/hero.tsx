@@ -24,7 +24,6 @@ export default function Hero() {
           <Link
             rel="noopener"
             href="/contact"
-            target="_blank"
             className="btn_primary"
           >
             Contact Us

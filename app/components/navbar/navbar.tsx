@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
-const navLinks = [
+let navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
@@ -14,6 +15,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = usePathname();
   const targetRef = useRef<HTMLDivElement>(null);
+  const { data: session } = useSession();
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -22,12 +25,19 @@ const Navbar = () => {
       ) {
         setIsOpen(false);
       }
+      if (session) {
+        navLinks.push({ name: "Dashboard", href: "/dashboard" });
+        console.log("signed In");
+      } else {
+        navLinks = navLinks.filter(link => link.href !== "/dashboard");
+        console.log("signed Out");
+      }
     };
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [session]);
 
   return (
     <nav className="h-20 w-full">
